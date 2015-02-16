@@ -1,0 +1,35 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <form class="add-form" ng-submit="saveSnippet()">
+      <p>Add snippet</p>
+      <input id="snippet-name" placeholder="Title" ng-model="name" type="text">
+      <textarea id="snippet-body" ng-model="body" cols="30" rows="5">Content</textarea>
+      <input type="submit" value="Add">
+    </form>
+
+    <form class="searchForm">
+        <input type="text" placeholder="Search snippets" ng-model="searchPhrase">
+    </form>
+
+  </div>
+</header>
+
+<div class="container">
+  <a href="#" class="btn-new" ng-click="toggleForm()">New snippet</a>
+  <h1>Latest snippets</h1>
+  <ul class="list" ng-cloak="snippets == {}">
+      <li class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 5 ">
+          <strong>{{snippet.name}}</strong>
+          <p>{{snippet.body}}</p>
+          <span class="meta-date">{{snippet.date_created | date}}</span>
+      </li>         
+  </ul>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
