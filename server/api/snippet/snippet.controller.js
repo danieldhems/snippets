@@ -10,7 +10,8 @@
 'use strict';
 
 var _ = require('lodash');
-var Snippet = require('./snippet.model');
+var Snippet = require('./snippet.model'),
+    Tag = require('../tag/tag.model');
 
 // Get list of Snippets
 exports.index = function(req, res) {
@@ -33,6 +34,26 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   Snippet.create(req.body, function(err, Snippet) {
     if(err) { return handleError(res, err); }
+
+    Snippet.tags.forEach( function(tag){
+
+      // Add new tag if it doesn't exist, or increment 'snippets' field for existing tag
+      Tag.count({name: tag}, function(err, count){
+        if(count>0){          
+          Tag.findOneAndUpdate( {name: tag}, {$inc: {snippets: 1}}, function(err, tag) {
+            if(err) { return handleError(res, err); }
+            console.log(tag);
+          })
+        } else {
+          Tag.create( {name: tag}, function(err, tag) {
+            if(err) { return handleError(res, err); }
+            console.log(tag);
+          })
+        }
+      })
+
+    })
+    
     return res.json(201, Snippet);
   });
 };

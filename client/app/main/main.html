@@ -4,6 +4,7 @@
       <p>Add snippet</p>
       <input id="snippet-name" placeholder="Title" ng-model="name" type="text">
       <textarea id="snippet-body" ng-model="body" cols="30" rows="5">Content</textarea>
+      <input id="snippet-tags" placeholder="Tags" ng-model="tags" type="text">
       <input type="submit" value="Add">
     </form>
 
@@ -18,10 +19,16 @@
   <a href="#" class="btn-new" ng-click="toggleForm()">New snippet</a>
   <h1>Latest snippets</h1>
   <ul class="list" ng-cloak="snippets == {}">
-      <li class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 5 ">
+      <li class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 5| orderBy:snippet.date_created:true">
           <strong>{{snippet.name}}</strong>
           <p>{{snippet.body}}</p>
           <span class="meta-date">{{snippet.date_created | date}}</span>
+          <p class="tags">Tags:
+            <ul class="tag-list">
+              <li ng-repeat="tag in snippet.tags">
+                <a href="#tag-">{{tag}}</a>
+              </li>
+            </ul>
       </li>         
   </ul>
 </div>

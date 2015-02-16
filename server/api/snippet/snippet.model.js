@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var SnippetSchema = new Schema({
   name: String,
   body: String,
+  tags: Array,
   date_created: Date
 });
 
