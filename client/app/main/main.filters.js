@@ -11,6 +11,6 @@
 angular.module('angularFullstackApp')
   .filter('date', function () {
     return function (input) {
-      return moment(input).format('MMM Do, YYYY');
+      return moment(input).format('MMM Do, YYYY [at] hh:mm');
     };
   });
