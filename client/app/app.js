@@ -10,7 +10,8 @@ angular.module('angularFullstackApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        controller: 'MainCtrl'
       });
 
     $locationProvider.html5Mode(true);

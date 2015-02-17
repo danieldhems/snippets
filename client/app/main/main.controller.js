@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('angularFullstackApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', ['$http', '$scope', 'Modal', function ($http, $scope, Modal) {
     $scope.snippets = [];
 
     $scope.newSnippet = {};
 
-    $scope.newSnippetForm = $('.add-form');
+    $scope.newSnippetForm = $('.new-snippet');
 
     $scope.searchPhrase;
 
@@ -60,4 +60,4 @@ angular.module('angularFullstackApp')
         $scope.newSnippetForm.addClass('show');
       }
     }
-  });
+  }]);

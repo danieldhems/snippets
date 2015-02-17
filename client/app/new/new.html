@@ -1,0 +1,11 @@
+<div class="container" ng-controller="NewCtrl">
+	<div class="new-snippet">
+	  <form class="form" ng-submit="saveSnippet()">
+	    <h1>Add snippet</h1>
+	    <input id="snippet-name" placeholder="Title" ng-model="name" type="text">
+	    <textarea id="snippet-body" ng-model="body" cols="30" rows="5">Content</textarea>
+	    <input id="snippet-tags" placeholder="Tags" ng-model="tags" type="text">
+	    <input type="submit" value="Add">
+	  </form>
+	</div>
+</div>

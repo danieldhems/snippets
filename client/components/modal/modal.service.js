@@ -42,6 +42,7 @@ angular.module('angularFullstackApp')
            * @param  {All}           - any additional args are passed staight to del callback
            */
           return function() {
+            console.log(1);
             var args = Array.prototype.slice.call(arguments),
                 name = args.shift(),
                 deleteModal;
@@ -72,6 +73,16 @@ angular.module('angularFullstackApp')
             });
           };
         }
+      },
+
+      viewSnippet: function(snippet){
+          console.log(snippet);
+          viewModal = openModal({
+            modal: {
+              dismissable:true,
+              title: 'Snippet'
+            }
+          })
       }
     };
   });
