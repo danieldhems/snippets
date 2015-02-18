@@ -6,26 +6,16 @@
   <ul class="list" ng-cloak="snippets == {}">
     <li id="{{snippet._id}}" class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 10 | orderBy: 'date_created':true">
       <a href="/snippet/{{snippet._id}}">{{snippet.name}}</a>
-      <p>{{snippet.body}}</p>
+      <p class="small">{{snippet.body}}</p>
       <span class="meta-date small">{{snippet.date_created | date}}</span>
       <div class="tags small">
         Tags:
         <ul class="tag-list">
           <li ng-repeat="tag in snippet.tags">
-            <a href="#tag-">{{tag}}</a>
+            <a href="/tag/{{tag}}">{{tag}}</a>
           </li>
         </ul>
       </div>
     </li>         
   </ul>
-
-  
 </div>
-
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>

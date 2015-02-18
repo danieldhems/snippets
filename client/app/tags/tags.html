@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Tags</h1>
+  <h1>All tags</h1>
   <ul class="list" ng-cloak="tags == {}">
     <li id="{{snippet._id}}" class="list-item" ng-repeat="tag in tags | filter: searchPhrase | limitTo: 10">
-      <a href="/tag/{{tag.name}}">{{tag.name}}</a> {{tag.snippets}}
+      <h2><a href="/tag/{{tag.name}}">{{tag.name}}</a></h2>
+      <p>{{tag.snippets}} snippets with this tag (<a href="/tag/{{tag.name}}">view snippets)</a></p>
     </li>         
   </ul>
 

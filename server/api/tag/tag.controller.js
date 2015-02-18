@@ -11,6 +11,7 @@
 
 var _ = require('lodash');
 var tag = require('./tag.model');
+var snippet = require('../snippet/snippet.model');
 
 // Get list of tags
 exports.index = function(req, res) {
@@ -20,9 +21,13 @@ exports.index = function(req, res) {
   });
 };
 
-// Get a single tag
+// Get all snippets associated with a tag
 exports.show = function(req, res) {
-  tag.findById(req.params.id, function (err, tag) {
+  snippet.find(
+    {
+      tags: { $in: [req.params.name] }
+    },
+    function (err, tag) {
     if(err) { return handleError(res, err); }
     if(!tag) { return res.send(404); }
     return res.json(tag);
@@ -31,7 +36,6 @@ exports.show = function(req, res) {
 
 // Creates a new tag in the DB.
 exports.create = function(req, res) {
-  console.log(req.body);
   tag.create(req.body, function(err, tag) {
     if(err) { return handleError(res, err); }
     return res.json(201, tag);

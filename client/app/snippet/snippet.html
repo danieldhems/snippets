@@ -1,5 +1,9 @@
 <div class="container">
-	<h1>{{snippet.name}}</h1>
-	<p>{{snippet.body}}</p>
-	{{snippet.date_created}}
+	<div class="snippet">
+		<h1>{{snippet.name}}</h1>
+		<span class="meta-data small">Created on {{snippet.date_created | date}}</span>
+		<div class="body">
+			<p>{{snippet.body}}</p>
+		</div>
+	</div>
 </div>

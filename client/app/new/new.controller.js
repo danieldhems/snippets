@@ -13,12 +13,17 @@ angular.module('angularFullstackApp')
       $scope.newSnippet.tags = $scope.tags.split(' ');
       $scope.newSnippet.date_created = new Date();
 
+      console.log($scope.newSnippet);
+
       // send to server
       $http.post('/api/snippets', $scope.newSnippet)
         .success( function(response){
           if(response){
           	alert("Done")
           }
+        })
+        .error( function(err){
+          console.log(err);
         });
     }
   });
