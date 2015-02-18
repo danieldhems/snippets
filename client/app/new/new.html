@@ -3,6 +3,7 @@
 	  <form class="form" ng-submit="saveSnippet()">
 	    <h1>Add snippet</h1>
 	    <input id="snippet-name" placeholder="Title" ng-model="name" type="text">
+	    <div ui-ace></div>
 	    <textarea id="snippet-body" ng-model="body" placeholder="Snippet..." cols="30" rows="5">Content</textarea>
 	    <input id="snippet-tags" placeholder="Tags" ng-model="tags" type="text">
 	    <input type="submit" value="Add">
