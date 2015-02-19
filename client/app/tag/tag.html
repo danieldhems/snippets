@@ -1,5 +1,4 @@
 <div class="container">
-  <a href="/new" class="btn-new">New snippet</a>
   <h1>Snippets tagged with: {{tagName}}</h1>
   <ul class="list" ng-cloak="snippets == {}">
     <li id="{{snippet._id}}" class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 10 | orderBy: 'date_created':true">
