@@ -1,5 +1,5 @@
 {
-  "name": "angular-fullstack",
+  "name": "snippets",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
