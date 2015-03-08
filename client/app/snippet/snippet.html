@@ -1,9 +1,21 @@
 <div class="container">
 	<div class="snippet">
-		<h1>{{snippet.name}}</h1>
-		<span class="meta-data small">Created on {{snippet.date_created | date}}</span>
-		<div class="body">
-			<p>{{snippet.body}}</p>
+		<div ng-show="!isEditing">
+			<h1>
+				{{snippet.name}}
+			</h1>
+			<span class="meta-data small">Created on {{snippet.date_created | date}}</span>
+			<div class="body">
+				{{snippet.body}}
+			</div>
+			<div class="tags">Tagged with: <a ng-href="tags/{{tag}}" ng-repeat="tag in snippet.tags">{{tag}}</a></div>
+			<a href="#" ng-click="isEditing = true">Edit</a>
+		</div>
+		<div ng-show="isEditing">
+			<input id="snippet-name" ng-model="snippet.name" type="text">
+			<textarea id="snippet-body" ng-model="snippet.body" placeholder="Snippet..." cols="30" rows="5">{{snippet.body}}</textarea>
+			<input id="snippet-tags" placeholder="Tags" ng-model="tags" type="text">
+			<button ng-click="updateSnippet()">Done</button>
 		</div>
 	</div>
 </div>
