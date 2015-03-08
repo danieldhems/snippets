@@ -2,10 +2,9 @@
 
 <div class="container">
   <h1>All snippets</h1>
-  <ul class="list" ng-cloak="snippets == {}">
-    <li id="{{snippet._id}}" class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 10 | orderBy: 'date_created':true">
-      <a href="/snippet/{{snippet._id}}">{{snippet.name}}</a>
-      <p class="small">{{snippet.body}}</p>
+  <ul class="list">
+    <li id="{{snippet._id}}" class="snippet" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 10 | orderBy: 'date_created':true">
+      <a class="title" href="/snippet/{{snippet._id}}">{{snippet.name}}</a>
       <span class="meta-date small">{{snippet.date_created | date}}</span>
       <div class="tags small">
         Tags:
