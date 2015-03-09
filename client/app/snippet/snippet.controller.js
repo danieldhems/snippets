@@ -8,6 +8,8 @@ angular.module('angularFullstackApp')
 
   	$scope.updateSnippet = function(){
 
+      console.log($scope.snippet);
+
   		$http.put('/api/snippets/'+$scope.snippet._id, $scope.snippet)
   		.success( function(response){
   			$scope.isEditing = false;

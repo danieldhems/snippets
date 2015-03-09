@@ -3,7 +3,6 @@
   <ul class="list" ng-cloak="snippets == {}">
     <li id="{{snippet._id}}" class="list-item" ng-repeat="snippet in snippets | filter: searchPhrase | limitTo: 10 | orderBy: 'date_created':true">
       <a href="/snippet/{{snippet._id}}">{{snippet.name}}</a>
-      <p>{{snippet.body}}</p>
       <span class="meta-date small">{{snippet.date_created | date}}</span>
       <div class="tags small">
         Tags:
