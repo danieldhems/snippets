@@ -421,8 +421,8 @@ module.exports = function (grunt) {
       },
       dist: [
         'sass',
-        'imagemin',
-        'svgmin'
+        // 'imagemin',
+        // 'svgmin'
       ]
     },
 
@@ -641,7 +641,7 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('heroku', [
+  grunt.registerTask('heroku:production', [
     'clean:dist',
     'injector:sass', 
     'concurrent:dist',
