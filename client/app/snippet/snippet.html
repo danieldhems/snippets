@@ -5,9 +5,7 @@
 				{{snippet.name}}
 			</h1>
 			<span class="meta-data small">Created on {{snippet.date_created | date}}</span>
-			<div class="body">
-				{{snippet.body}}
-			</div>
+			<div class="body" btf-markdown="snippet.body"></div>
 			<div class="tags">Tagged with: <a ng-href="/tags/{{tag}}" ng-repeat="tag in snippet.tags">{{tag}}</a></div>
 			<a href="#" ng-click="isEditing = true">Edit</a>
 		</div>

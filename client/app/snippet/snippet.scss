@@ -5,6 +5,17 @@
 	}
 	.body {
 		margin-top:2em;
+
+		ol li {
+			list-style:decimal;
+		}
+		ul li {
+			list-style:disc;
+		}
+
+		li {
+			margin-bottom:10px;
+		}
 	}
 
 	.tags {
