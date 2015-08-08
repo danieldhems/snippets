@@ -16,10 +16,10 @@
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="app/app.css">
   </head>
   <body ng-app="angularFullstackApp">
     <!--[if lt IE 7]>
@@ -39,7 +39,7 @@
       <a href="/new" class="btn-new">New snippet</a>
        
       <div class="nav">
-        <ul>
+        <ul class="group">
           <li>
             <a href="/">Snippets</a>
           </li>
@@ -108,8 +108,6 @@
           <script src="app/tag/tag.js"></script>
           <script src="app/tags/tags.controller.js"></script>
           <script src="app/tags/tags.js"></script>
-          <script src="components/modal/modal.service.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

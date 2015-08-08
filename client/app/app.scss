@@ -1,8 +1,7 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-// @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
+@import 'snippet/snippet';
 
 /**
  * App-wide Styles
@@ -82,6 +81,12 @@ ul,li {
     right:15px;
 }
 
+li {
+    position: relative;
+}
+
+
+
 /**
 *
 *    Bootstrap stuff
@@ -157,6 +162,12 @@ ul,li {
     border-top: 1px solid #E5E5E5;
 }
 
+.group:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'main/main.scss';
@@ -164,5 +175,4 @@ ul,li {
 @import 'snippet/snippet.scss';
 @import 'tag/tag.scss';
 @import 'tags/tags.scss';
-@import 'modal/modal.scss';
 // endinjector
