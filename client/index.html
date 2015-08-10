@@ -26,16 +26,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
    
-   <header class="hero-unit">
-     <div class="container">
-        <form class="form-search">
-            <input class="fld-text" type="text" placeholder="Search snippets" ng-model="searchPhrase">
-        </form>
-     </div>
-   </header>
-
-    <div class="container">
-
       <a href="/new" class="btn-new">New snippet</a>
        
       <div class="nav">
@@ -49,10 +39,12 @@
         </ul>
       </div>
 
-    </div>
-
     <!-- Add your site or application content here -->
     <div ng-view=""></div>
+
+    <form class="form-search">
+        <input class="fld-text" type="text" placeholder="Search snippets" ng-model="searchPhrase">
+    </form>
 
     <footer class="footer">
       <div class="container">

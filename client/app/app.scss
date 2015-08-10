@@ -1,8 +1,6 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-@import 'snippet/snippet';
-
 /**
  * App-wide Styles
  */
@@ -16,6 +14,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 body {
     color:#000;
+    font-size:16px;
+    font-size:1.2em;
+}
+
+a {
+    text-decoration: none;
 }
 
 input[type=text],   
@@ -33,6 +37,10 @@ ul,li {
     list-style:none;
 }
 
+p {
+    margin:0.2em 0;
+}
+
 .container {
     max-width:960px;
     margin:0 auto;
@@ -46,7 +54,10 @@ ul,li {
 */
 
 .nav {
-	margin-top:15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:0.4em;
 	
 	li {
 		float:left;
@@ -124,7 +135,7 @@ li {
 
 .list-item {
     position: relative;
-    margin-bottom:2em;
+    margin-bottom:0.8em;
 }
 
 .tag-list {
@@ -135,6 +146,7 @@ li {
     }
 }
 
+/*
 .meta-date {
     position:absolute;
     top:0;
@@ -144,6 +156,7 @@ li {
         content:'added ';
     }
 }
+*/
 
 /**
 *
